@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold:     #C6973F;
+    --gold-light:#E2C27D;
+    --gold-dark: #A67C2E;
+    --charcoal:  #1C1C1E;
+  }
+
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+  body {
+    @apply bg-white text-luxury-black font-sans;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  * { box-sizing: border-box; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar       { width: 5px; }
+  ::-webkit-scrollbar-track { background: #f5f5f7; }
+  ::-webkit-scrollbar-thumb { background: #C6973F; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #1C1C1E; }
+
+  ::selection { background: rgba(198,151,63,.18); color: #111; }
+}
+
+@layer components {
+  .gold-divider    { @apply w-16 h-0.5 bg-gold mx-auto; }
+  .section-title   { @apply font-serif text-3xl md:text-4xl lg:text-5xl text-luxury-black leading-tight; }
+  .section-subtitle{ @apply font-sans text-luxury-gray text-base md:text-lg leading-relaxed; }
+  .section-container{ @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  /* ── Buttons ── */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5
+           bg-gold text-white font-sans font-semibold text-sm
+           tracking-luxury uppercase transition-all duration-300
+           hover:bg-gold-dark hover:shadow-gold-lg hover:-translate-y-0.5;
+  }
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5
+           bg-charcoal text-white font-sans font-semibold text-sm
+           tracking-luxury uppercase transition-all duration-300
+           hover:bg-charcoal-light hover:-translate-y-0.5;
+  }
+  .btn-outline-gold {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5
+           border border-gold text-gold font-sans font-semibold text-sm
+           tracking-luxury uppercase transition-all duration-300
+           hover:bg-gold hover:text-white hover:-translate-y-0.5;
+  }
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5
+           border border-white/60 text-white font-sans font-semibold text-sm
+           tracking-luxury uppercase transition-all duration-300
+           hover:bg-white hover:text-charcoal hover:-translate-y-0.5;
+  }
+
+  /* ── Inputs ── */
+  .luxury-input {
+    @apply w-full px-4 py-3 border border-luxury-light-gray bg-luxury-soft-bg
+           text-luxury-black placeholder-luxury-gray text-sm font-sans
+           focus:outline-none focus:border-gold transition-colors duration-200;
+  }
+
+  /* ── Cards ── */
+  .glass {
+    background: rgba(255,255,255,.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .glass-dark {
+    background: rgba(28,28,30,.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* ── WhatsApp ── */
+  .whatsapp-btn {
+    @apply flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white
+           font-semibold text-sm tracking-wide rounded-full
+           transition-all duration-300 hover:bg-[#1ea952] hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  /* ── Skeleton ── */
+  .shimmer {
+    background: linear-gradient(90deg,#f5f5f7 25%,#e5e5ea 50%,#f5f5f7 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s linear infinite;
+  }
+}
+
+@layer utilities {
+  .bg-clip-text   { -webkit-background-clip:text; background-clip:text; }
+  .scrollbar-hide { -ms-overflow-style:none; scrollbar-width:none; }
+  .scrollbar-hide::-webkit-scrollbar { display:none; }
+  .aspect-product { aspect-ratio:3/4; }
+  .tracking-luxury{ letter-spacing:.15em; }
+  .tracking-ultra { letter-spacing:.3em; }
+}
+
+/* Swiper bullets */
+.swiper-pagination-bullet        { background:#C6973F !important; opacity:.4 !important; }
+.swiper-pagination-bullet-active { opacity:1 !important; width:24px !important; border-radius:4px !important; }
+
+/* Product description */
+.product-description p  { @apply mb-4 text-luxury-gray leading-relaxed; }
+.product-description ul { @apply list-disc pl-5 space-y-2 text-luxury-gray; }
