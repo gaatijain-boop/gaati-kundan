@@ -31,19 +31,9 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top bar — charcoal */}
-      <div className="bg-charcoal text-white text-center py-2 px-4 fixed top-0 left-0 right-0 z-50">
-        <p className="text-xs tracking-luxury uppercase font-sans">
-          ✦ Free shipping above ₹999 &nbsp;·&nbsp;
-          <a href={`https://wa.me/${BRAND.whatsappNumber}`} className="text-gold font-semibold hover:underline">
-            WhatsApp: +{BRAND.whatsappNumber}
-          </a> ✦
-        </p>
-      </div>
-
       {/* Main nav */}
       <header className={cn(
-        'fixed top-8 left-0 right-0 z-40 transition-all duration-500',
+        'fixed top-0 left-0 right-0 z-40 transition-all duration-500',
         scrolled ? 'bg-white/96 backdrop-blur-md shadow-sm border-b border-luxury-light-gray' : 'bg-transparent'
       )}>
         <nav className="section-container">
