@@ -70,7 +70,7 @@ export default function Footer() {
               <li>
                 <a href={`https://wa.me/${BRAND.whatsappNumber}`} target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-3 text-white/45 text-sm font-sans hover:text-gold transition-colors">
-                  <WhatsAppIcon /> +{BRAND.whatsappNumber}
+                  <WhatsAppIcon /> Chat on WhatsApp
                 </a>
               </li>
               <li>

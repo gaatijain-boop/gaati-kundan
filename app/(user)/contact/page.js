@@ -65,7 +65,7 @@ export default function ContactPage() {
                   <h4 className="font-sans font-semibold text-luxury-black text-sm mb-1 group-hover:text-gold transition-colors">
                     WhatsApp
                   </h4>
-                  <p className="text-luxury-gray font-sans text-sm">+{BRAND.whatsappNumber}</p>
+                  <p className="text-luxury-gray font-sans text-sm">Chat with our team</p>
                   <p className="text-gold text-xs font-sans mt-1">Click to chat →</p>
                 </div>
               </a>
@@ -101,7 +101,7 @@ export default function ContactPage() {
                   <h4 className="font-sans font-semibold text-luxury-black text-sm mb-1 group-hover:text-gold transition-colors">
                     Instagram
                   </h4>
-                  <p className="text-luxury-gray font-sans text-sm">@gaatikundan</p>
+                  <p className="text-luxury-gray font-sans text-sm">@gaati_kundanjwellery</p>
                   <p className="text-gold text-xs font-sans mt-1">Follow for daily inspiration →</p>
                 </div>
               </a>

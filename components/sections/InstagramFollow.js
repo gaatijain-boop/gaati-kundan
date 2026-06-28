@@ -41,7 +41,7 @@ export default function InstagramFollow() {
             className="inline-flex items-center gap-2 text-luxury-black font-sans font-semibold text-sm hover:text-gold transition-colors duration-200"
           >
             <FiInstagram className="w-4 h-4" />
-            @gaatikundan
+            @gaati_kundanjwellery
           </a>
         </motion.div>
 
