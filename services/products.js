@@ -1,5 +1,13 @@
 import { supabase } from '@/lib/supabase';
 
+async function revalidateStorefront() {
+  try {
+    await fetch('/api/revalidate', { method: 'POST' });
+  } catch (error) {
+    console.error('Failed to revalidate storefront cache:', error);
+  }
+}
+
 const PRODUCT_SELECT = `
   *,
   categories(id, name, slug),
@@ -140,6 +148,7 @@ export async function createProduct({ name, slug, description, price, category_i
     .single();
 
   if (error) throw error;
+  await revalidateStorefront();
   return data;
 }
 
@@ -152,6 +161,7 @@ export async function updateProduct(id, updates) {
     .single();
 
   if (error) throw error;
+  await revalidateStorefront();
   return data;
 }
 
@@ -162,6 +172,7 @@ export async function deleteProduct(id) {
 
   const { error } = await supabase.from('products').delete().eq('id', id);
   if (error) throw error;
+  await revalidateStorefront();
 }
 
 export async function addProductImage(productId, imageUrl, sortOrder = 0) {
