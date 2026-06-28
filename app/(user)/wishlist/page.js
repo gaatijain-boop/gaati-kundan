@@ -37,7 +37,7 @@ export default function WishlistPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-luxury-cream border-b border-luxury-light-gray py-14 md:py-20">
+      <div className="bg-luxury-soft-bg border-b border-luxury-light-gray py-14 md:py-20">
         <div className="section-container text-center">
           <p className="text-gold text-xs tracking-ultra uppercase font-sans mb-3">Saved Pieces</p>
           <h1 className="font-serif text-4xl md:text-5xl text-luxury-black mb-2">My Wishlist</h1>
@@ -64,7 +64,7 @@ export default function WishlistPage() {
                   className="group"
                 >
                   {/* Image */}
-                  <div className="relative aspect-product overflow-hidden bg-luxury-cream mb-4">
+                  <div className="relative aspect-product overflow-hidden bg-luxury-soft-bg mb-4">
                     <Link href={`/product/${item.slug}`}>
                       {item.image ? (
                         <Image

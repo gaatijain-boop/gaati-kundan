@@ -44,7 +44,7 @@ export default function CartPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-luxury-cream border-b border-luxury-light-gray py-14 md:py-20">
+      <div className="bg-luxury-soft-bg border-b border-luxury-light-gray py-14 md:py-20">
         <div className="section-container text-center">
           <p className="text-gold text-xs tracking-ultra uppercase font-sans mb-3">Your Selection</p>
           <h1 className="font-serif text-4xl md:text-5xl text-luxury-black mb-2">Shopping Cart</h1>
@@ -80,7 +80,7 @@ export default function CartPage() {
                   {/* Image + Name */}
                   <div className="col-span-12 md:col-span-6 flex gap-4 items-center">
                     <Link href={`/product/${item.slug}`} className="flex-shrink-0">
-                      <div className="w-20 h-24 relative overflow-hidden bg-luxury-cream">
+                      <div className="w-20 h-24 relative overflow-hidden bg-luxury-soft-bg">
                         {item.image ? (
                           <Image
                             src={item.image}
@@ -121,7 +121,7 @@ export default function CartPage() {
                     <div className="flex items-center border border-luxury-light-gray">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="w-9 h-9 flex items-center justify-center hover:bg-luxury-cream hover:text-gold transition-colors"
+                        className="w-9 h-9 flex items-center justify-center hover:bg-luxury-soft-bg hover:text-gold transition-colors"
                         aria-label="Decrease quantity"
                       >
                         <FiMinus className="w-3.5 h-3.5" />
@@ -131,7 +131,7 @@ export default function CartPage() {
                       </span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="w-9 h-9 flex items-center justify-center hover:bg-luxury-cream hover:text-gold transition-colors"
+                        className="w-9 h-9 flex items-center justify-center hover:bg-luxury-soft-bg hover:text-gold transition-colors"
                         aria-label="Increase quantity"
                       >
                         <FiPlus className="w-3.5 h-3.5" />
@@ -166,7 +166,7 @@ export default function CartPage() {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-luxury-cream p-6 sticky top-24">
+            <div className="bg-luxury-soft-bg p-6 sticky top-24">
               <h3 className="font-serif text-xl text-luxury-black mb-5">Order Summary</h3>
 
               <div className="space-y-3 mb-5 pb-5 border-b border-luxury-light-gray">

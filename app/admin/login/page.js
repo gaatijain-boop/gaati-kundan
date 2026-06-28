@@ -18,8 +18,13 @@ export default function AdminLoginPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) { toast.error('Invalid email or password'); return; }
+      if (data.user?.app_metadata?.role !== 'admin') {
+        await supabase.auth.signOut();
+        toast.error('This account does not have admin access');
+        return;
+      }
       toast.success('Welcome back!');
       router.push('/admin');
     } catch { toast.error('Something went wrong'); }

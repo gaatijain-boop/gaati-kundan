@@ -69,7 +69,7 @@ export default function AboutPage() {
       </div>
 
       {/* Stats */}
-      <div className="bg-luxury-black py-16">
+      <div className="bg-luxury-off-white py-16 border-y border-luxury-light-gray">
         <div className="section-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -79,8 +79,8 @@ export default function AboutPage() {
               { number: '3+', label: 'Years of Trust' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="font-serif text-4xl md:text-5xl text-gold mb-2">{stat.number}</p>
-                <p className="text-gray-400 text-sm font-sans tracking-wide">{stat.label}</p>
+                <p className="font-serif text-4xl md:text-5xl text-luxury-black mb-2">{stat.number}</p>
+                <p className="text-luxury-gray text-sm font-sans tracking-wide">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
               desc: 'Every piece we create is crafted with care, tested for quality, and designed to make you feel beautiful. Your satisfaction is our highest priority.',
             },
           ].map((item) => (
-            <div key={item.title} className="bg-luxury-cream p-8 border border-luxury-light-gray">
+            <div key={item.title} className="bg-luxury-soft-bg p-8 border border-luxury-light-gray">
               <div className="w-12 h-12 border border-gold/40 flex items-center justify-center mb-6">
                 <span className="text-gold text-xl">{item.icon}</span>
               </div>
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </div>
 
       {/* CTA */}
-      <div className="bg-luxury-cream border-t border-luxury-light-gray py-16">
+      <div className="bg-luxury-soft-bg border-t border-luxury-light-gray py-16">
         <div className="section-container text-center">
           <h3 className="font-serif text-3xl text-luxury-black mb-4">
             Experience the Gaati Kundan Difference

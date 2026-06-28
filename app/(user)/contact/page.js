@@ -23,7 +23,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-luxury-cream border-b border-luxury-light-gray py-20 md:py-28">
+      <div className="bg-luxury-soft-bg border-b border-luxury-light-gray py-20 md:py-28">
         <div className="section-container text-center">
           <p className="text-gold text-xs tracking-ultra uppercase font-sans mb-3">Reach Out</p>
           <h1 className="font-serif text-5xl md:text-6xl text-luxury-black mb-4">Contact Us</h1>
@@ -114,7 +114,7 @@ export default function ContactPage() {
 
           {/* Contact Form → WhatsApp */}
           <div>
-            <div className="bg-luxury-cream p-8 md:p-10">
+            <div className="bg-luxury-soft-bg p-8 md:p-10">
               <h3 className="font-serif text-2xl text-luxury-black mb-2">
                 Send Us a Message
               </h3>

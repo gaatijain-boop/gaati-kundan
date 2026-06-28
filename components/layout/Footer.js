@@ -11,8 +11,8 @@ export default function Footer() {
     <footer className="bg-charcoal text-white">
       <div className="h-px bg-gold-gradient" />
 
-      <div className="section-container py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="section-container py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-10">
 
           {/* Brand */}
           <div>

@@ -14,11 +14,18 @@ export default function AdminLayout({ children }) {
   const isLoginPage = pathname === '/admin/login';
 
   useEffect(() => {
+    function isAdminSession(session) {
+      return !!session && session.user?.app_metadata?.role === 'admin';
+    }
+
     async function checkAuth() {
       const { data: { session } } = await supabase.auth.getSession();
-      if (session) {
+      if (isAdminSession(session)) {
         setIsAuthenticated(true);
       } else if (!isLoginPage) {
+        if (session) {
+          await supabase.auth.signOut();
+        }
         router.push('/admin/login');
       }
       setIsLoading(false);
@@ -27,7 +34,7 @@ export default function AdminLayout({ children }) {
     checkAuth();
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session) {
+      if (isAdminSession(session)) {
         setIsAuthenticated(true);
       } else if (!isLoginPage) {
         setIsAuthenticated(false);

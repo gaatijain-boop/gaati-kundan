@@ -39,7 +39,7 @@ export default async function HomeProductSections() {
         products={newArrivals}
         viewAllLink="/category/earrings"
         viewAllLabel="View All New Arrivals"
-        bgColor="bg-luxury-off-white"
+        bgColor="bg-white"
       />
 
       <ProductSection

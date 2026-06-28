@@ -23,15 +23,15 @@ export default function Hero() {
   const s = slides[cur];
 
   return (
-    <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
+    <section className="relative h-[85vh] min-h-[520px] max-h-[800px] overflow-hidden pt-16 md:pt-20">
       {/* Slides */}
       {slides.map((sl, i) => (
         <div key={i} className="absolute inset-0 transition-opacity duration-1000" style={{ opacity: i === cur ? 1 : 0 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={sl.image} alt={sl.heading} className="w-full h-full object-cover" />
-          {/* Deep charcoal overlay — elegant & neutral */}
-          <div className="absolute inset-0 bg-gradient-to-r from-charcoal/85 via-charcoal/50 to-charcoal/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+          {/* Soft neutral overlay — light & airy */}
+          <div className="absolute inset-0 bg-gradient-to-r from-charcoal/55 via-charcoal/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/35 via-transparent to-transparent" />
         </div>
       ))}
 
@@ -47,7 +47,7 @@ export default function Hero() {
             </motion.p>
 
             <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.8 }}
-              className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white leading-[.95] mb-5">
+              className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.05] mb-5">
               {s.heading}
             </motion.h1>
 

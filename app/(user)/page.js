@@ -25,7 +25,7 @@ export default function HomePage() {
       <FeaturedCollections />
 
       {/* Product Sections (Trending, New Arrivals, Featured) */}
-      <Suspense fallback={<div className="h-96 animate-pulse bg-luxury-cream" />}>
+      <Suspense fallback={<div className="h-96 animate-pulse bg-luxury-soft-bg" />}>
         <HomeProductSections />
       </Suspense>
 

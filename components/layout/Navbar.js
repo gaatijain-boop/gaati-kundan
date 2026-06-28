@@ -26,23 +26,19 @@ export default function Navbar() {
 
   useEffect(() => setIsMobileOpen(false), [pathname]);
 
-  const isHome = pathname === '/';
-  const scrolled = isScrolled || !isHome;
-
   return (
     <>
       {/* Main nav */}
       <header className={cn(
-        'fixed top-0 left-0 right-0 z-40 transition-all duration-500',
-        scrolled ? 'bg-white/96 backdrop-blur-md shadow-sm border-b border-luxury-light-gray' : 'bg-transparent'
+        'fixed top-0 left-0 right-0 z-40 bg-white transition-shadow duration-300',
+        isScrolled ? 'shadow-sm border-b border-luxury-light-gray' : 'border-b border-transparent'
       )}>
         <nav className="section-container">
           <div className="flex items-center justify-between h-16 md:h-20">
 
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
-              <p className={cn('font-serif font-bold text-xl md:text-2xl leading-none transition-colors duration-300',
-                scrolled ? 'text-charcoal' : 'text-white')}>
+              <p className="font-serif font-bold text-xl md:text-2xl leading-none text-charcoal">
                 Gaati Kundan
               </p>
               <p className="text-[10px] text-gold tracking-ultra uppercase font-sans mt-0.5">Jewellery</p>
@@ -52,8 +48,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-8">
               {[{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }, { label: 'Contact', href: '/contact' }].map(l => (
                 <Link key={l.href} href={l.href} className={cn(
-                  'text-sm font-sans tracking-wide transition-colors duration-200 hover:text-gold',
-                  scrolled ? 'text-luxury-black' : 'text-white',
+                  'text-sm font-sans tracking-wide transition-colors duration-200 hover:text-gold text-luxury-black',
                   pathname === l.href && 'text-gold font-semibold'
                 )}>{l.label}</Link>
               ))}
@@ -62,10 +57,7 @@ export default function Navbar() {
               <div className="relative"
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}>
-                <button className={cn(
-                  'text-sm font-sans tracking-wide transition-colors hover:text-gold flex items-center gap-1',
-                  scrolled ? 'text-luxury-black' : 'text-white'
-                )}>
+                <button className="text-sm font-sans tracking-wide transition-colors hover:text-gold flex items-center gap-1 text-luxury-black">
                   Collections
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -100,7 +92,7 @@ export default function Navbar() {
             {/* Icons */}
             <div className="flex items-center gap-2 md:gap-3">
               <Link href="/wishlist" aria-label="Wishlist"
-                className={cn('relative p-2 transition-colors hover:text-gold', scrolled ? 'text-luxury-black' : 'text-white')}>
+                className="relative p-2 transition-colors hover:text-gold text-luxury-black">
                 <FiHeart className="w-5 h-5" />
                 {wishlistCount > 0 && (
                   <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-gold text-white text-[10px] font-bold rounded-full flex items-center justify-center">{wishlistCount}</span>
@@ -108,7 +100,7 @@ export default function Navbar() {
               </Link>
 
               <Link href="/cart" aria-label="Cart"
-                className={cn('relative p-2 transition-colors hover:text-gold', scrolled ? 'text-luxury-black' : 'text-white')}>
+                className="relative p-2 transition-colors hover:text-gold text-luxury-black">
                 <FiShoppingBag className="w-5 h-5" />
                 {cartCount > 0 && (
                   <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-gold text-white text-[10px] font-bold rounded-full flex items-center justify-center">{cartCount > 9 ? '9+' : cartCount}</span>
@@ -116,7 +108,7 @@ export default function Navbar() {
               </Link>
 
               <button onClick={() => setIsMobileOpen(!isMobileOpen)} aria-label="Menu"
-                className={cn('md:hidden p-2 transition-colors hover:text-gold', scrolled ? 'text-luxury-black' : 'text-white')}>
+                className="md:hidden p-2 transition-colors hover:text-gold text-luxury-black">
                 {isMobileOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
               </button>
             </div>
